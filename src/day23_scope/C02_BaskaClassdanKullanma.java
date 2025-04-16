@@ -1,29 +1,47 @@
 package day23_scope;
 
-public class C01_ClassLevelVariables {
+public class C02_BaskaClassdanKullanma {
 
-    String strI;
-    static String strS = "Ali";
-    int sayiI = 10;
-    static int sayiS;
-    char chrI;
-    static char chrS = '#';
-    boolean blI = true;
-    static boolean blS;
+    /*
+       Local variable'lar olusturulduklari kod blogunun disindan KULLANILAMAZ
+
+       Class level variable'lar olusturulduklari class'in her yerinden
+       kullanilabildigi gibi
+       baska class'lardan da KULLANILABILIRLER
+
+       ANCAKK static keyword burada da erisim yontemini belirler
+
+       static class uyeleri ( variable/method)
+       baska class'dan kullanilacaksa
+       classIsmi.staticClassUyesiIsmi seklinde kullanilabilir
+
+       instance variable'lari veya static olmayan method'lari
+       kullanmak icin yine obje olusturmamiz gerekir
+
+       static class uyeleri de istenirse
+       obje uzerinden kullanilabilir
+       ANCAK bu durumda Java,
+       static olan bir class uyesine
+       nicin instance referans ile ulasiyorsun
+       diye kodu sariya boyar
+    */
 
     public static void main(String[] args) {
 
-        System.out.println("strS : "+strS);
-        System.out.println("sayiS : "+sayiS);
-        System.out.println("chrS : "+chrS);
-        System.out.println("blS : "+blS);
+        System.out.println(C01_ClassLevelVariables.strS);
+        System.out.println(C01_ClassLevelVariables.sayiS);
+        C01_ClassLevelVariables.method1();
 
         C01_ClassLevelVariables obj = new C01_ClassLevelVariables();
+        System.out.println(obj.blI);
+        obj.method2();
 
-        System.out.println("strI : "+obj.strI);
-        System.out.println("sayiI : "+obj.sayiI);
-        System.out.println("chrI : "+obj.chrI);
-        System.out.println("blI : "+obj.blI);
+        System.out.println(obj.blS);
+
+        obj.method1();
+
+
 
     }
+
 }

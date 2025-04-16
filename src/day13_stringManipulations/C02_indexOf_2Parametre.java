@@ -9,38 +9,40 @@ public class C02_indexOf_2Parametre {
     eger aranan char veya metin str'da birden fazla varsa ilkinin index'ini geitirir.
  */
 
-        String str = "Java cok guzel";
+        String str = "Ali topu at, at Ali at";
 
-        System.out.println(str.contains("cok"));
-        System.out.println(str.startsWith("cok"));
-        System.out.println(str.endsWith("cok"));
-        System.out.println(str.equals("cok"));
 
-        // Peki bu cok nerede
-        System.out.println(str.indexOf("cok"));
-        // "cok" kelimesi str icinde 5. index'den itibaren var
+        // metin'de 2 adet Ali gectigi biliniyorsa
+        // 2. Ali'nin index'ini bulunuz
 
-        System.out.println(str.indexOf("a"));
+        int ilkAliIndexi = str.indexOf("Ali");  // 0
 
-        str = "Ali topu at, at Ali at";
-        System.out.println(str.indexOf("at"));
-        System.out.println(str.indexOf("Ali"));
-        System.out.println(str.indexOf("a"));
+        System.out.println("Ali'nin ilk kullanim index'i : " + ilkAliIndexi); // 0
 
-        System.out.println(str.indexOf("k"));
-        System.out.println(str.contains("k"));
+        int ikinciAliIndexi = str.indexOf("Ali" , ilkAliIndexi+1);
 
-        //Kullanicidan bir metin isteyin metni Java icerip icermedigini index of'dan faydalanarak yazdırın
+        System.out.println("Ali'nin ikinci kullanim index'i : " + ikinciAliIndexi); // 16
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Lutfen bir metin giriniz...");
-        String metin = scanner.nextLine();
 
-        if ( metin.indexOf("Java") != -1  ){
-            System.out.println("Yazilan metin Java iceriyor...");
-        } else {
-            System.out.println("Yazilan metin Java icermiyor...");
-        }
+        // str'da 3 adet "at" gectigi biliniyorsa
+        // 3. "at" kelimesinin index'ini yazdirin
+
+        int ilkAtIndexi = str.indexOf("at");
+        int ikinciAtIndexi = str.indexOf("at",ilkAtIndexi+1);
+        int ucuncuAtIndexi = str.indexOf("at",ikinciAtIndexi+1);
+
+        System.out.println("at kelimesinin 3. kullanim index'i : " + ucuncuAtIndexi);
+
+
+        // str'da top kelimesinin 1. , 2. ve 3. kullanimlarinin index'lerini yazdirin
+
+        int ilkTopIndexi = str.indexOf("top");
+        int ikinciTopIndexi = str.indexOf("top",ilkTopIndexi+1);
+        int ucuncuTopIndexi = str.indexOf("top",ikinciTopIndexi+1);
+
+        System.out.println("top kelimesinin 1. kullanim index'i : " + ilkTopIndexi); // 4
+        System.out.println("top kelimesinin 2. kullanim index'i : " + ikinciTopIndexi); // -1
+        System.out.println("top kelimesinin 3. kullanim index'i : " + ucuncuTopIndexi); // 4
 
     }
 }

@@ -1,47 +1,23 @@
 package day23_scope;
 
-public class C02_BaskaClassdanKullanma {
+public class C03_Hastane {
 
     /*
-       Local variable'lar olusturulduklari kod blogunun disindan KULLANILAMAZ
+        Class level'da olusturulan variable'lardan
+        TUM OBJELER icin ortak bir degere sahip olmasini istediklerimizi static,
+        HER BIR OBJE icin ayri bir degere sahip olmasini istediklerimizi instance olarak TANIMLAMALIYIZ
+     */
 
-       Class level variable'lar olusturulduklari class'in her yerinden
-       kullanilabildigi gibi
-       baska class'lardan da KULLANILABILIRLER
+    static String hastaneIsmi = "Yildiz Hastanesi";
+    static String hastaneAdresi = "Cankaya";
+    static String hastaneTelefon = "3122343434";
+    static String bashekim = "Dr Eda";
 
-       ANCAKK static keyword burada da erisim yontemini belirler
+    String persIsmi = "isim atanmadi";
+    String perAdres = "adres atanmadi";
+    String perTel = "tel atanmadi";
 
-       static class uyeleri ( variable/method)
-       baska class'dan kullanilacaksa
-       classIsmi.staticClassUyesiIsmi seklinde kullanilabilir
-
-       instance variable'lari veya static olmayan method'lari
-       kullanmak icin yine obje olusturmamiz gerekir
-
-       static class uyeleri de istenirse
-       obje uzerinden kullanilabilir
-       ANCAK bu durumda Java,
-       static olan bir class uyesine
-       nicin instance referans ile ulasiyorsun
-       diye kodu sariya boyar
-    */
-
-    public static void main(String[] args) {
-
-        System.out.println(C01_ClassLevelVariables.strS);
-        System.out.println(C01_ClassLevelVariables.sayiS);
-        C01_ClassLevelVariables.method1();
-
-        C01_ClassLevelVariables obj = new C01_ClassLevelVariables();
-        System.out.println(obj.blI);
-        obj.method2();
-
-        System.out.println(obj.blS);
-
-        obj.method1();
-
-
-
-    }
 
 }
+
+

@@ -5,29 +5,44 @@ import java.util.Scanner;
 public class C04_LastIndexOf {
     public static void main(String[] args) {
 
-        String str = "Hersey cok guzel olacak cok";
-        System.out.println(str.indexOf("e"));
-        System.out.println(str.indexOf("e", 2));
+            String str = "Hersey cok guzel olacak, cok";
 
-        System.out.println(str.lastIndexOf("a"));
+            System.out.println(str.indexOf("e")); // 1
 
-        str = "Java ile kod yaz, kod yazmak cok guzel";
+            // 2. e'nin index'ini yazdirin
 
-        System.out.println(str.indexOf("Java"));
-        System.out.println(str.lastIndexOf("Java"));
+            System.out.println( str.indexOf('e', 2) ); // 4
 
-        System.out.println(str.indexOf("kod"));
-        System.out.println(str.lastIndexOf("kod"));
+            // cumlede kullanilan son a'nin index'ini yazdirin
+
+            // Eger bir char veya metnin son kullanim index'ini isterseniz
+            // indexOf() yerine lastIndexOf()
+
+            System.out.println(str.lastIndexOf('a'));  // 21
 
 
-        System.out.println(str.indexOf("a"));
-        System.out.println(str.lastIndexOf("a"));
+            str = "Java ile kod yaz, kod yazmak cok guzel";
 
-        System.out.println(str.indexOf("yaz"));
-        System.out.println(str.lastIndexOf("yaz"));
+            System.out.println(str.indexOf("Java")); // 0
+            System.out.println(str.lastIndexOf("Java")); // 0
 
-        System.out.println(str.indexOf("x"));
-        System.out.println(str.lastIndexOf("x"));
+            System.out.println(str.indexOf("kod")); // 9
+            System.out.println(str.lastIndexOf("kod")); // 18
+
+            System.out.println(str.indexOf("a")); // 1
+            System.out.println(str.lastIndexOf("a")); // 26
+
+            System.out.println(str.indexOf("yaz")); // 13
+            System.out.println(str.lastIndexOf("yaz")); // 22
+
+            System.out.println(str.indexOf("x")); // -1
+            System.out.println(str.lastIndexOf("x")); // -1
+
+
+            System.out.println(str.lastIndexOf('a', 15));  // 14
+
+            System.out.println(str.lastIndexOf('a', 13));  // 3
+
     }
 }
 
