@@ -3,7 +3,7 @@ package day49_interface_exception;
 import java.util.ArrayList;
 import java.util.List;
 
-public class C02_Child implements I01_Interface{
+public class K0_Bolme implements I01_Interface{
 
     /*
 
