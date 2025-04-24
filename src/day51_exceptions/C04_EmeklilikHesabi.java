@@ -16,33 +16,60 @@ public class C04_EmeklilikHesabi {
         // hemen emekli olamazsin yazdirsin, diger bilgileri istemesin
 
 
-        try (Scanner emekli = new Scanner(System.in)) {
+//        try (Scanner emekli = new Scanner(System.in)) {
+//
+//            System.out.print("Yaşınızı giriniz: ");
+//            int yas = emekli.nextInt();
+//            if (yas < 60 || yas > 75) {
+//                throw new Exception("Yaş aralığı 60 ile 75 arasında olmalıdır");
+//            }
+//
+//
+//            System.out.print("Cinsiyetinizi giriniz (E/K): ");
+//            char cinsiyet = emekli.next().toUpperCase().charAt(0);
+//            if (cinsiyet != 'E' && cinsiyet != 'K') {
+//                throw new Exception("Cinsiyet geçersiz");
+//            }
+//
+//
+//            System.out.print("Uyruk giriniz (TC/YD): ");
+//            String uyruk = emekli.next().toUpperCase();
+//            if (!uyruk.equals("TC")) {
+//                throw new Exception("Uyruk uygun değil");
+//            }
+//
+//            System.out.println("Tebrikler! Emekli olabilirsiniz.\n" + "Yaşınız " + yas + "\n" + "Cinsiyet " + cinsiyet + "\n" + "Uyruk " + uyruk);
+//
+//
+//        } catch (Exception e) {
+//            System.out.println(e.getMessage());
+//        }
 
+        Scanner scanner = new Scanner(System.in);
+        try {
             System.out.print("Yaşınızı giriniz: ");
-            int yas = emekli.nextInt();
+            int yas = scanner.nextInt();
+
             if (yas < 60 || yas > 75) {
                 throw new Exception("Yaş aralığı 60 ile 75 arasında olmalıdır");
             }
-
-
+            scanner.nextLine();
             System.out.print("Cinsiyetinizi giriniz (E/K): ");
-            char cinsiyet = emekli.next().toUpperCase().charAt(0);
-            if (cinsiyet != 'E' && cinsiyet != 'K') {
+            String cinsiyet = scanner.nextLine();
+            if (!(cinsiyet.equalsIgnoreCase("e") || cinsiyet.equalsIgnoreCase("K"))) {
                 throw new Exception("Cinsiyet geçersiz");
             }
-
-
             System.out.print("Uyruk giriniz (TC/YD): ");
-            String uyruk = emekli.next().toUpperCase();
-            if (!uyruk.equals("TC")) {
+            String uyruk = scanner.next().toUpperCase();
+            if (!uyruk.equalsIgnoreCase("TC")) {
                 throw new Exception("Uyruk uygun değil");
             }
-
-            System.out.println("Tebrikler! Emekli olabilirsiniz.\n" + "Yaşınız " + yas + "\n" + "Cinsiyet " + cinsiyet + "\n" + "Uyruk " + uyruk);
-
-
+            System.out.println("Tebrikler! Emekli olabilirsiniz.\n" + "Yaşınız " + yas + "\n" + "Cinsiyet " + cinsiyet.toUpperCase() + "\n" + "Uyruk " + uyruk);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+
+        System.out.println("Kod normal olarak calismaya devam eder");
+
     }
 }
